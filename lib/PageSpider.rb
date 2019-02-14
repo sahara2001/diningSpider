@@ -42,9 +42,9 @@ class PageSpider < Kimurai::Base
         #index to count nutrition
         index = 0
         #click on food object
-        item.trigger :click; sleep 1
+        item.hover rescue break; sleep 1
         # test, careful because post request changes host states
-        @browser.execute_script("getItemNutritionLabel(62980638)") ; sleep 2
+        # @browser.execute_script("getItemNutritionLabel(62980638)") ; sleep 1
         new_response = browser.current_response
 
         #loop through and print all 12th ave foods
